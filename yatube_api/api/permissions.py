@@ -2,11 +2,7 @@ from rest_framework import permissions
 
 
 class IsAuthorOrReadOnly(permissions.BasePermission):
-    """
-    • SAFE-методы доступны всем
-    • Изменять/удалять объект может только его автор
-    • Создавать объекты может любой аутентифицированный
-    """
+    """Разрешает чтение всем, а изменение — только автору объекта."""
 
     def has_permission(self, request, view):
         # На уровне запроса: писать можно только будучи залогиненным
