@@ -8,7 +8,6 @@ router.register('v1/posts', PostViewSet, basename='posts')
 router.register('v1/groups', GroupViewSet, basename='groups')
 router.register('v1/follow', FollowViewSet, basename='follow')
 
-# нестовые комментарии
 comments = CommentViewSet.as_view({
     'get': 'list',
     'post': 'create'
@@ -32,6 +31,5 @@ urlpatterns = [
         comment_detail,
         name='comment_detail'
     ),
-    # JWT-аутентификация djoser + simplejwt
     path('v1/', include('djoser.urls.jwt')),
 ]
